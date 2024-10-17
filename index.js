@@ -1,22 +1,27 @@
-let FahrenheitTemp = prompt("Enter your Fahrenheit temperature to convert to celsius");
-FahrenheitTemp = Number(FahrenheitTemp)
-const convertToCelsius = (FahrenheitTemp) => {
-let celsiusTemp = (5/9) * (FahrenheitTemp-32);
-alert(`it is ${celsiusTemp}`);
-}
-convertToCelsius(FahrenheitTemp);
+const userInput = Number(prompt(`Enter your Fahrenheit temperature`));
 
-const describeTemperature = (celsiusTemp) => {
-  if (celsiusTemp <32) {
-    alert(`very cold`);
-  } else if (32<=celsiusTemp<64) {
-    alert(`cold`);
-  } else if (64<=celsiusTemp<86) {
-    alert (`warm`);
-  } else if (86<=celsiusTemp<100) {
-    alert (`hot`);
-  } else if (celsiusTemp>= 100) {
-    addEventListenerlert(`very hot`);
-  }
+const convertToCelsius = (fahrenheitTemp) =>{
+const celsiustemp = (fahrenheitTemp - 32) * 5/9
+return celsiustemp;
 }
-describeTemperature(celsiusTemp);
+
+const describeTemperature = (fahrenheitTemp) =>{
+ if (fahrenheitTemp < 32) {
+  return "very cold";
+ }
+ else if (fahrenheitTemp < 64) {
+  return " cold";
+ }
+ else if (fahrenheitTemp < 86) {
+  return "warm";
+ }
+ else if (fahrenheitTemp < 100) {
+  return "hot";
+ }
+ else if(fahrenheitTemp >= 100) {
+  return `very hot`;
+ }
+}
+
+alert(`${userInput}F is ${convertToCelsius(userInput)}C and it feels ${describeTemperature(userInput)} `)
+
